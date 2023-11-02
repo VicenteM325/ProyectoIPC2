@@ -65,7 +65,7 @@ public class UsuarioDB {
 
             while (resultSet.next()) {
 
-                var id = resultSet.getInt("id_usuario");
+                var id = resultSet.getInt("_code");
                 var nombre = resultSet.getString("nombre");
                 var username = resultSet.getString("username");
                 var password = resultSet.getString("password");
@@ -91,8 +91,8 @@ public class UsuarioDB {
             try (var resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
 
-                    var id = resultSet.getInt("id_usuario");
-                    var nombre = resultSet.getString("nombre");
+                    var id = resultSet.getInt("_code");
+                    var nombre = resultSet.getString("user_name");
                     var email = resultSet.getString("email");
                     usuario = new Usuario(id, nombre, username, password, email);
                 }
